@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import  { Toaster } from 'react-hot-toast';
+import PrivateRoute from "./components/PrivateRoutes";
 function App() {
   const [isLoggedIn , setIsLoggedIn] = useState(false)
   return (
@@ -23,10 +24,12 @@ function App() {
      <div className="mt-[110px]">
      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+       <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/signup" element={<Signup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        
       </Routes>
+     
      </div>
       </div>
     </div>

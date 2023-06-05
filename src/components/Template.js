@@ -3,7 +3,8 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignUpForm";
 import frame from "../assets/frame.png"
 
-const Template = ({title , desc1 , desc2 , image , formType , isLoggedIn}) => {
+const Template = ({title , desc1 , desc2 , image , formType , isLoggedIn , setIsLoggedIn}) => {
+    console.log(setIsLoggedIn ,"seiis")
     // formType is which type of form login or signup
     return (
         <div  className="grid grid-cols-1 max-w-[1080px] mx-auto sm:grid-cols-2  ">
@@ -13,7 +14,7 @@ const Template = ({title , desc1 , desc2 , image , formType , isLoggedIn}) => {
                 <p className="text-white my-1">{desc2}</p>
                 <div>
                     {
-                        formType === "signup" ? <SignupForm /> : <LoginForm />
+                        formType === "signup" ? <SignupForm setIsLoggedIn={setIsLoggedIn} /> : <LoginForm  setIsLoggedIn={setIsLoggedIn} />
                     }
             </div>
             </div>
