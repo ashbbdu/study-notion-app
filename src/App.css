@@ -6,3 +6,20 @@ html,
 body {
     overflow-x: hidden;
 }
+
+a {
+  color: #fff;
+}
+
+img {
+    width: 100%;
+}
+
+input {
+    border-radius: 2px;
+    padding: 8px 5px;
+    outline: none;
+    background-color: rgb(22 29 41/var(--tw-bg-opacity));
+    color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.18) 0;
+}

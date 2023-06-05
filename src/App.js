@@ -10,7 +10,7 @@ import  { Toaster } from 'react-hot-toast';
 function App() {
   const [isLoggedIn , setIsLoggedIn] = useState(false)
   return (
-    <div >
+    <div className="bg-richblack-900 min-h-screen">
 
     
     <div>
@@ -20,12 +20,14 @@ function App() {
 />
       <Navbar isLoggedIn={isLoggedIn}  setIsLoggedIn={setIsLoggedIn}/>
 
-      <Routes>
+     <div className="mt-[110px]">
+     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
+     </div>
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ import logo from "../assets/Logo.svg"
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     return (
-        <div className="flex items-center justify-evenly ">
+        <div className="flex items-center justify-evenly py-6">
             <Link to="/">
                 <img src={logo} alt="logo" width={160} height={32} loading="lazy" />
             </Link>
