@@ -1,10 +1,11 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import logo from "../assets/Logo.svg"
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     return (
-        <div className="flex">
+        <div className="flex items-center justify-evenly ">
             <Link to="/">
                 <img src={logo} alt="logo" width={160} height={32} loading="lazy" />
             </Link>
@@ -15,18 +16,28 @@ const Navbar = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/">About</Link>
+                        <Link to="/about">About</Link>
                     </li>
                     <li>
-                        <Link to="/">Contact</Link>
+                        <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
             </nav>
-            <div>
-                <Link to="/">Login</Link>
-                <Link to="/">SigUup</Link>
-                <Link to="/">Dashboard</Link>
-                <Link to="/">Logout</Link>
+            <div >
+                {
+                    !isLoggedIn && <div className="space-x-4"><Link to="/login">Login</Link>
+                        <Link  to="/signup" >Signup</Link></div>
+                }
+
+                {isLoggedIn && <div className="space-x-4">  <Link to="/dashboard">Dashboard</Link>
+                    <Link to="/" onClick={() => {
+                        setIsLoggedIn(false)
+                        toast.success("Logged out")
+                    }
+
+                    }>Logout</Link></div>}
+
+
             </div>
         </div>
     )
