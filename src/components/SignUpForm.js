@@ -27,10 +27,16 @@ const SignupForm = ({setIsLoggedIn}) => {
 
     const submitFormHandler = (event) => {
         event.preventDefault();
-        navigate("/dashboard");
-        toast.success(`Signed up as ${role.toUpperCase} Successfully !`)
-        setIsLoggedIn(true)
-        console.log(formData)
+        if(formData.password !== formData.confirmPassword ){
+            toast.error("Password Did Not Match !!")
+        }
+        else {
+            navigate("/dashboard");
+            toast.success(`Signed up as ${role} Successfully !`)
+            setIsLoggedIn(true)
+            console.log(formData)
+        }
+      
     }  
     return (
         <div className="">

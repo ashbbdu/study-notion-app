@@ -27,3 +27,8 @@ input {
 .active {
     border-bottom:2px solid #fed709;;
 }
+
+sup {
+    color: red;
+    margin-left: 5px;
+}

@@ -24,6 +24,7 @@ function App() {
      <div className="mt-[110px]">
      <Routes>
         <Route path="/" element={<Home />} />
+        
        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<Signup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />

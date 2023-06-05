@@ -4,7 +4,6 @@ import SignupForm from "./SignUpForm";
 import frame from "../assets/frame.png"
 
 const Template = ({title , desc1 , desc2 , image , formType , isLoggedIn , setIsLoggedIn}) => {
-    console.log(setIsLoggedIn ,"seiis")
     // formType is which type of form login or signup
     return (
         <div  className="grid grid-cols-1 max-w-[1080px] mx-auto sm:grid-cols-2  ">
