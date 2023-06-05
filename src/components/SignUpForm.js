@@ -34,7 +34,6 @@ const SignupForm = ({setIsLoggedIn}) => {
             navigate("/dashboard");
             toast.success(`Signed up as ${role} Successfully !`)
             setIsLoggedIn(true)
-            console.log(formData)
         }
       
     }  
